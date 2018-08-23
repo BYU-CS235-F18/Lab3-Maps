@@ -137,9 +137,9 @@ When I run this code, I get the following vector of strings associated with the 
 > did, had, did, took, had, went, having, did, did, beheld, did, who, had, did, did, was, spake,
 > said, said, did, did, began, began, did, received, did, have, did, had, said, declare, say, make
 
-You can check to see whether you get the same list (to do that, you'll need to iterate over the
-keys in your map until you find "Nephi", and then you can print out all the words in the vector
-(Value) associated with the Key "Nephi."
+You can check to see whether you get the same list for the key "Nephi". To access the vector for the
+key "Nephi", use wordmap["Nephi"] or wordmap.at("Nephi"). Then iterate over that vector and print all
+the words out to check that it matches the words shown here.
 
 #### Output: 
 To verify that you have created this correctly, print out the vector of words that
