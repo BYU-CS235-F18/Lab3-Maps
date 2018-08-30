@@ -80,7 +80,7 @@ for (list<string>::iterator it=lst.begin(); it!=lst.end(); it++) {
 }
 ```
 *Note that lst is the list of strings created in part 2 (I used a list instead of a vector just to confuse
-you!*
+you!)*
 
 Notice that our first entry that we put into wordmap has an empty string as the key, and the first
 word as the value.
@@ -127,7 +127,7 @@ for(list<string>::iterator it=lst.begin(); it !=lst.end(); it++) {
 }
 ```
 *Note that lst is the list of strings created in part 2 (I used a list instead of a vector just to confuse
-you!*
+you!)*
 
 When I run this code, I get the following vector of strings associated with the Key "Nephi":
 
@@ -170,61 +170,11 @@ Here's sample output.
 Print the sermon/poem/story/speech you generated to the terminal.
 
 ### Part 6
-But we are still only using one word to get "context" and the generated text still doesn't sound very
-good. We would really like to use a phrase as a key so that we can learn multiple word context. In
-other words, for the phrase: "I Nephi having", we would like to have "I Nephi" be the key (two
-words) for "having". To do this, we just change the key for the map to be a list of strings. As we 
-move through the text, we can push words onto the back of the list and pop words off the front of
-the list to continually get a context of M words. Here's the code:
-``` c++
-  int M=2;
-  map<list<string>, vector<string>> wordmap;
-  list<string> state;
-  for (int i = 0; i < M; i++) {
-    state.push_back("");
-  }
-                        
-  for (list<string>::iterator it=lst.begin(); it!=lst.end(); it++) {
-    wordmap[state].push_back(*it);
-    state.push_back(*it);
-    state.pop_front();
-  }
-```
-*Note that lst is the list of strings created in part 2 (I used a list instead of a vector just to confuse
-you!*
-
-We can then generate a new sermon from the resulting map with this code:
-
-``` c++
-  state.clear();
-  for (int i = 0; i < M; i++) {
-    state.push_back("");
-  }
-  for (int i = 0; i < 100; i++) {
-    int ind = rand() % wordmap[state].size();
-    cout << wordmap[state][ind]<<" ";
-    state.push_back(wordmap[state][ind]);
-    state.pop_front();
-  }
-```
-The texts that is generated now sound much more like English (though admittedly, it ain't perfect).
-Here's a sample 100-word sermon that I generated for M=2:
-
-> I Nephi have written are true and living God And it came to pass that Zoram did take me and were partaking of the Lord my brethren they were disputing one with another concerning the things which he hath spoken And it came to pass that the Lord hath protected my sons are no more for the Lord such as Great and marvelous are thy works O Lord according to the words of the Lamb of God wherefore thou shalt also behold a man among the children of men And we beheld the pointers which were many he said unto
-
-Note that, for some inputs, the above code might produce a "floating point exception" if somehow
-wordmap[state].size() is equal to zero. You could fix this by identifying when this is the case, and
-then resetting the state to its initial value (obtained in lines 2-3 of the previous snippet of code).
-
-#### Output: 
-Print the sermon/poem/story/speech you generated to the terminal.
-
-### Part 7
 Do something creative to try to improve your algorithm, or experiment with different texts.
 Trump.txt and Nephi_Trump.txt are provided, but you could find cooler ones. For example, you
 could collect a bunch of poems by Robert Frost into a .txt file, and then run your algorithm to see
 what kinds of poems you could generate. When you submit the code to Canvas, include a discussion of what you did.
 
 # Summary for Handing in the Code
-You should submit your c9.io user id on Canvas so that the TA can run through parts 1-6 in order for any input file, and
+You should submit your c9.io user id on Canvas so that the TA can run through parts 1-5 in order for any input file, and
 produce the expected output.
