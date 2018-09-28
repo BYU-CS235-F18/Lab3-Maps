@@ -18,14 +18,12 @@ then produce text that has the same distribution of words as the original docume
 
 ## Scoring
 The lab will be scored as follows:
-1. (14 points) Read the document into a set of strings and print them to a file.
-2. (14 points) Read the document into a vector of strings and print them to a file.
-3. (14 points) Create a map from a string (the key) to a string (the value).
-4. (14 points) Generate text from this map.
-5. (14 points) Generate text from a map that pairs strings (keys) to a vector of strings (values).
-6. (14 points) Generate text from a map composed of a list of strings as keys and vectors of strings
-as values.
-7. (16 points) Explore different texts and methods, and observe when the algorithm produces
+1. (10 points) Read the document into a set of strings and print them to a file.
+2. (10 points) Read the document into a vector of strings and print them to a file.
+3. (20 points) Create a map from a string (the key) to a string (the value).
+4. (20 points) Generate text from this map.
+5. (20 points) Generate text from a map that pairs strings (keys) to a vector of strings (values).
+6. (20 points) Explore different texts and methods, and observe when the algorithm produces
 interesting things. Have a little fun. Discuss what you did in your Canvas Submission.
 
 ## Details
