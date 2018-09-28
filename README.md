@@ -6,9 +6,9 @@ The purpose of this lab is to have some fun and maybe to also learn a little bit
 implementations of lists, sets, and maps in the C++ Standard Template Library.
 
 ## Required Knowledge
-In order to understand the solutions to this lab, you should become familiar with lists, sets, and
-maps, and be able to use the the implementations of these data structures provide in the C++ standard
-library. You should also be able to read and write to a file.
+In order to understand the solutions to this lab, you should become familiar with vectors, sets, and
+maps, and be able to use the implementations of these data structures provide in the C++ standard
+library. You should also be able to read from and write to a file.
 
 ## Overview
 Machine learning has become increasingly popular in Computer Science. To state things perhaps
